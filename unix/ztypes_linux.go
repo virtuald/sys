@@ -3905,3 +3905,21 @@ const (
 	NFC_SDP_ATTR_URI                  = 0x1
 	NFC_SDP_ATTR_SAP                  = 0x2
 )
+
+const (
+	IPC_CREAT   = 0x200
+	IPC_EXCL    = 0x400
+	IPC_NOWAIT  = 0x800
+	IPC_PRIVATE = 0x0
+)
+
+const (
+	IPC_RMID = 0x0
+	IPC_SET  = 0x1
+	IPC_STAT = 0x2
+)
+
+const (
+	SHM_RDONLY = 0x1000
+	SHM_RND    = 0x2000
+)

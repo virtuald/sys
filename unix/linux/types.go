@@ -34,12 +34,14 @@ package unix
 #include <sys/epoll.h>
 #include <sys/inotify.h>
 #include <sys/ioctl.h>
+#include <sys/ipc.h>
 #include <sys/mman.h>
 #include <sys/mount.h>
 #include <sys/param.h>
 #include <sys/ptrace.h>
 #include <sys/resource.h>
 #include <sys/select.h>
+#include <sys/shm.h>
 #include <sys/signal.h>
 #include <sys/signalfd.h>
 #include <sys/statfs.h>
@@ -3795,4 +3797,27 @@ const (
 	NFC_SDP_ATTR_UNSPEC               = C.NFC_SDP_ATTR_UNSPEC
 	NFC_SDP_ATTR_URI                  = C.NFC_SDP_ATTR_URI
 	NFC_SDP_ATTR_SAP                  = C.NFC_SDP_ATTR_SAP
+)
+
+// shm
+
+type SysvIpcPerm C.struct_ipc_perm
+type SysvShmDesc C.struct_shmid_ds
+
+const (
+	IPC_CREAT   = C.IPC_CREAT
+	IPC_EXCL    = C.IPC_EXCL
+	IPC_NOWAIT  = C.IPC_NOWAIT
+	IPC_PRIVATE = C.IPC_PRIVATE
+)
+
+const (
+	IPC_RMID = C.IPC_RMID
+	IPC_SET  = C.IPC_SET
+	IPC_STAT = C.IPC_STAT
+)
+
+const (
+	SHM_RDONLY = C.SHM_RDONLY
+	SHM_RND    = C.SHM_RND
 )
